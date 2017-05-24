@@ -23,7 +23,7 @@ function pico_notify_base( $mydirname , $category , $item_id )
 	$module_handler =& xoops_gethandler( 'module' ) ;
 	$module =& $module_handler->getByDirname( $mydirname ) ;
 
-	$picoPermission =& PicoPermission::getInstance() ;
+	$picoPermission = PicoPermission::getInstance() ;
 	$permissions = $picoPermission->getPermissions( $mydirname ) ;
 
 	// global

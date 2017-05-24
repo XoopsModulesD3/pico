@@ -5,12 +5,12 @@ require_once dirname(dirname(__FILE__)).'/include/common_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/include/transact_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/include/import_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/class/gtickets.php' ;
-(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance() ;
 $db = XoopsDatabaseFactory::getDatabaseConnection() ;
 
 
 $module_handler =& xoops_gethandler( 'module' ) ;
-$modules =& $module_handler->getObjects() ;
+$modules = $module_handler->getObjects() ;
 $importable_modules = array() ;
 foreach( $modules as $module ) {
 	$mid = $module->getVar('mid') ;

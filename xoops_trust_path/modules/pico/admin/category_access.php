@@ -2,7 +2,7 @@
 
 require_once dirname(dirname(__FILE__)).'/include/common_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/class/gtickets.php' ;
-(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance() ;
 $db = XoopsDatabaseFactory::getDatabaseConnection() ;
 
 // get info of the category
@@ -125,7 +125,7 @@ foreach( $pico_category_permissions as $perm_name ) {
 
 // create group form
 $group_handler =& xoops_gethandler( 'group' ) ;
-$groups =& $group_handler->getObjects() ;
+$groups = $group_handler->getObjects() ;
 $groups4assign = array() ;
 foreach( $groups as $group ) {
 	$gid = $group->getVar('groupid') ;
