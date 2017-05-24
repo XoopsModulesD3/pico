@@ -24,7 +24,7 @@ function pico_common_get_cat_id_from_content_id( $mydirname , $content_id )
 // get both $categoryObj and $contentObj from specified content_id
 function pico_common_get_objects_from_content_id( $mydirname , $content_id )
 {
-	$picoPermission =& PicoPermission::getInstance() ;
+	$picoPermission = PicoPermission::getInstance() ;
 	$permissions = $picoPermission->getPermissions( $mydirname ) ;
 	$cat_id = pico_common_get_cat_id_from_content_id( $mydirname , $content_id ) ;
 	$categoryObj = new PicoCategory( $mydirname , intval( $cat_id ) , $permissions ) ;
@@ -141,7 +141,7 @@ function pico_common_get_submenu( $mydirname , $caller = 'xoops_version' )
 	$mod_config =& $config_handler->getConfigsByCat( 0 , $module->getVar('mid') ) ;
 
 	$db = XoopsDatabaseFactory::getDatabaseConnection() ;
-	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance();
 
 	$whr_read = '`cat_id` IN (' . implode( "," , pico_common_get_categories_can_read( $mydirname ) ) . ')' ;
 	$categories = array( 0 => array( 'pid' => -1 , 'name' => '' , 'url' => '' , 'sub' => array() ) ) ;

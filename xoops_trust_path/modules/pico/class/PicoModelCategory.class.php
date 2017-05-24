@@ -14,7 +14,7 @@ function PicoCategoryHandler( $mydirname , $permissions = null )
 	if( $permissions ) {
 		$this->permissions = $permissions ;
 	} else {
-		$picoPermission =& PicoPermission::getInstance() ;
+		$picoPermission = PicoPermission::getInstance() ;
 		$this->permissions = $picoPermission->getPermissions( $mydirname ) ;
 	}
 }
@@ -149,7 +149,7 @@ function getData()
 
 function getData4html()
 {
-	$myts =& PicoTextSanitizer::sGetInstance() ;
+	$myts = PicoTextSanitizer::sGetInstance() ;
 
 	return array(
 		'link' => pico_common_make_category_link4html( $this->mod_config , $this->data ) ,

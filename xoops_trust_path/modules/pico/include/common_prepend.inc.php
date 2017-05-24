@@ -14,7 +14,7 @@ if( ! defined( 'PATH_SEPARATOR' ) ) define( 'PATH_SEPARATOR' , DIRECTORY_SEPARAT
 ini_set( 'include_path' , ini_get('include_path') . PATH_SEPARATOR . XOOPS_TRUST_PATH . '/PEAR' ) ;
 
 // breadcrumbs
-$breadcrumbsObj =& AltsysBreadcrumbs::getInstance() ;
+$breadcrumbsObj = AltsysBreadcrumbs::getInstance() ;
 $breadcrumbsObj->appendPath( XOOPS_URL.'/modules/'.$mydirname.'/index.php' , $xoopsModule->getVar( 'name' ) ) ;
 
 // URI Mapper
@@ -27,7 +27,7 @@ $uriMapper->initGet() ;
 $picoRequest = $uriMapper->parseRequest() ; // clean data
 
 // permissions
-$picoPermission =& PicoPermission::getInstance() ;
+$picoPermission = PicoPermission::getInstance() ;
 $permissions = $picoPermission->getPermissions( $mydirname ) ;
 
 // current category object
@@ -45,7 +45,7 @@ $breadcrumbsObj->appendPath( $currentCategoryObj->getBreadcrumbs() ) ;
 
 
 /*
-$myts =& PicoTextSanitizer::sGetInstance() ;
+$myts = PicoTextSanitizer::sGetInstance() ;
 $db = XoopsDatabaseFactory::getDatabaseConnection() ;
 
 // for compatibility "wraps mode" and "GET" in some environment
